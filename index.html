@@ -39,13 +39,11 @@
     }
     article::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: var(--accent); }
     .portrait {
+      display: block;
       width: 192px;
       height: 208px;
       margin: 8px auto 20px;
-      background-image: var(--sprite);
-      background-position: 0 0;
-      background-repeat: no-repeat;
-      background-size: 1536px 2288px;
+      object-fit: contain;
       filter: drop-shadow(0 16px 18px rgba(0,0,0,.32));
     }
     h2 { margin: 0; font-size: 1.75rem; letter-spacing: -.025em; }
@@ -65,6 +63,17 @@
     .install { background: var(--accent); color: #11111a; }
     .download { border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); }
     footer { margin-top: 24px; color: #9d97af; font-size: .9rem; line-height: 1.5; }
+    .license-link {
+      min-height: 0;
+      margin-top: 7px;
+      padding: 0;
+      color: #aaa4bc;
+      font-size: .78rem;
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,.28);
+      text-underline-offset: 3px;
+    }
     @media (max-width: 680px) {
       main { padding-top: 42px; }
       .grid { grid-template-columns: 1fr; }
@@ -79,8 +88,8 @@
       <p>Select “Install” to open ChatGPT Desktop. Both sprite sheets use the Pets v2 format and are installed locally.</p>
     </header>
     <section class="grid" aria-label="Pets">
-      <article style="--accent:#ffd465;--sprite:url('assets/rechka-otter-v2.webp')">
-        <div class="portrait" role="img" aria-label="Rechka, a river otter"></div>
+      <article style="--accent:#ffd465">
+        <img class="portrait" src="assets/rechka-portrait.png" width="192" height="208" alt="Rechka, a river otter">
         <h2>Rechka</h2>
         <p>A warm and curious river otter who brings calm focus and playful confidence.</p>
         <div class="actions">
@@ -88,8 +97,8 @@
           <a class="download" href="assets/rechka-otter-v2.webp" download>Download sprite</a>
         </div>
       </article>
-      <article style="--accent:#d9a4ff;--sprite:url('assets/lumen-night-catbus-v2.webp')">
-        <div class="portrait" role="img" aria-label="Lumen, a night catbus"></div>
+      <article style="--accent:#d9a4ff">
+        <img class="portrait" src="assets/lumen-portrait.png" width="192" height="208" alt="Lumen, a night catbus">
         <h2>Lumen</h2>
         <p>A mysterious night catbus with lantern-bright eyes, warm windows, and a moonlit grin.</p>
         <div class="actions">
@@ -98,7 +107,10 @@
         </div>
       </article>
     </section>
-    <footer>Installation requires ChatGPT Desktop with Pets support. Each link opens an installation confirmation screen. See the repository files for licensing and third-party rights notices.</footer>
+    <footer>
+      <div>Installation requires ChatGPT Desktop with Pets support. Each link opens an installation confirmation screen.</div>
+      <a class="license-link" href="licenses.html">Licenses and third-party rights</a>
+    </footer>
   </main>
   <script>
     const pets = {

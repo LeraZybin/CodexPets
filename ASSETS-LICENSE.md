@@ -7,6 +7,7 @@ Copyright © 2026 Lera. The files in `assets/` are excluded from the MIT License
 The following file is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/):
 
 - `assets/rechka-otter-v2.webp`
+- `assets/rechka-portrait.png`
 
 You may share and adapt this file for non-commercial purposes provided that you give appropriate credit, link to the license, and indicate whether changes were made.
 
@@ -21,6 +22,7 @@ The complete legal terms are available at <https://creativecommons.org/licenses/
 The following file is **not** licensed under the MIT License or Creative Commons:
 
 - `assets/lumen-night-catbus-v2.webp`
+- `assets/lumen-portrait.png`
 
 Lumen is an unofficial fan-made work inspired by Catbus from *My Neighbor Totoro*. Catbus, *My Neighbor Totoro*, and related characters, names, visual elements, and other underlying intellectual property belong to their respective rights holders, including Studio Ghibli where applicable. This project is not affiliated with, sponsored by, approved by, or endorsed by Studio Ghibli or any other relevant rights holder.
 

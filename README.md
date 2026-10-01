@@ -18,6 +18,8 @@ This repository uses separate licenses for code and artwork:
 
 - The HTML, CSS, and JavaScript in `index.html` are licensed under the MIT License. See `LICENSE`.
 - `assets/rechka-otter-v2.webp` is licensed under CC BY-NC 4.0. See `ASSETS-LICENSE.md`.
+- `assets/rechka-portrait.png` is licensed under the same CC BY-NC 4.0 terms.
 - `assets/lumen-night-catbus-v2.webp` is subject to a limited personal-use permission and a third-party rights notice. It is not covered by the MIT License or CC BY-NC 4.0. See `ASSETS-LICENSE.md`.
+- `assets/lumen-portrait.png` is subject to the same limited personal-use permission and notice.
 
 Lumen is an unofficial fan-made work inspired by Catbus from *My Neighbor Totoro*. This project is not affiliated with or endorsed by Studio Ghibli or any relevant rights holder.
