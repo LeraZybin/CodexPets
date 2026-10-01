@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10101a">
+  <title>Lera's Codex Pets</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+      background: #10101a;
+      color: #f8f5ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(circle at 10% 12%, #293852 0, transparent 36%),
+        radial-gradient(circle at 90% 4%, #522969 0, transparent 32%),
+        #10101a;
+    }
+    main { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 64px 0 72px; }
+    header { max-width: 680px; margin-bottom: 34px; }
+    h1 { margin: 0 0 10px; font-size: clamp(2.25rem, 7vw, 4.5rem); line-height: .95; letter-spacing: -.05em; }
+    header p { margin: 0; color: #c8c2d9; font-size: 1.05rem; line-height: 1.55; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    article {
+      position: relative;
+      overflow: hidden;
+      min-height: 470px;
+      padding: 26px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 28px;
+      background: rgba(26,25,40,.82);
+      box-shadow: 0 22px 70px rgba(0,0,0,.26);
+      backdrop-filter: blur(16px);
+    }
+    article::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: var(--accent); }
+    .portrait {
+      width: 192px;
+      height: 208px;
+      margin: 8px auto 20px;
+      background-image: var(--sprite);
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 1536px 2288px;
+      filter: drop-shadow(0 16px 18px rgba(0,0,0,.32));
+    }
+    h2 { margin: 0; font-size: 1.75rem; letter-spacing: -.025em; }
+    article p { min-height: 52px; margin: 10px 0 24px; color: #bbb5cc; line-height: 1.5; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    a {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 17px;
+      border-radius: 14px;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .install { background: var(--accent); color: #11111a; }
+    .download { border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); }
+    footer { margin-top: 24px; color: #9d97af; font-size: .9rem; line-height: 1.5; }
+    @media (max-width: 680px) {
+      main { padding-top: 42px; }
+      .grid { grid-template-columns: 1fr; }
+      article { min-height: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Two pets for Codex</h1>
+      <p>Select “Install” to open ChatGPT Desktop. Both sprite sheets use the Pets v2 format and are installed locally.</p>
+    </header>
+    <section class="grid" aria-label="Pets">
+      <article style="--accent:#ffd465;--sprite:url('assets/rechka-otter-v2.webp')">
+        <div class="portrait" role="img" aria-label="Rechka, a river otter"></div>
+        <h2>Rechka</h2>
+        <p>A warm and curious river otter who brings calm focus and playful confidence.</p>
+        <div class="actions">
+          <a class="install" data-pet="rechka" href="#">Install</a>
+          <a class="download" href="assets/rechka-otter-v2.webp" download>Download sprite</a>
+        </div>
+      </article>
+      <article style="--accent:#d9a4ff;--sprite:url('assets/lumen-night-catbus-v2.webp')">
+        <div class="portrait" role="img" aria-label="Lumen, a night catbus"></div>
+        <h2>Lumen</h2>
+        <p>A mysterious night catbus with lantern-bright eyes, warm windows, and a moonlit grin.</p>
+        <div class="actions">
+          <a class="install" data-pet="lumen" href="#">Install</a>
+          <a class="download" href="assets/lumen-night-catbus-v2.webp" download>Download sprite</a>
+        </div>
+      </article>
+    </section>
+    <footer>Installation requires ChatGPT Desktop with Pets support. Each link opens an installation confirmation screen. See the repository files for licensing and third-party rights notices.</footer>
+  </main>
+  <script>
+    const pets = {
+      rechka: {
+        name: 'Rechka',
+        image: 'assets/rechka-otter-v2.webp',
+        description: 'A warm and curious river otter — calm, playful, and confident.'
+      },
+      lumen: {
+        name: 'Lumen',
+        image: 'assets/lumen-night-catbus-v2.webp',
+        description: 'A mysterious night catbus with lantern-bright eyes and warm window light.'
+      }
+    };
+    for (const link of document.querySelectorAll('[data-pet]')) {
+      const pet = pets[link.dataset.pet];
+      const imageUrl = new URL(pet.image, location.href).href;
+      const params = new URLSearchParams({
+        name: pet.name,
+        imageUrl,
+        description: pet.description,
+        spriteVersionNumber: '2'
+      });
+      link.href = `codex://pets/install?${params}`;
+    }
+  </script>
+</body>
+</html>
