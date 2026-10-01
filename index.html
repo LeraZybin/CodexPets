@@ -21,7 +21,7 @@
         radial-gradient(circle at 90% 4%, #522969 0, transparent 32%),
         #10101a;
     }
-    main { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 64px 0 72px; }
+    main { display: flex; flex-direction: column; width: min(960px, calc(100% - 32px)); min-height: 100vh; margin: 0 auto; padding: 64px 0 34px; }
     header { max-width: 680px; margin-bottom: 34px; }
     h1 { margin: 0 0 10px; font-size: clamp(2.25rem, 7vw, 4.5rem); line-height: .95; letter-spacing: -.05em; }
     header p { margin: 0; color: #c8c2d9; font-size: 1.05rem; line-height: 1.55; }
@@ -62,10 +62,11 @@
     }
     .install { background: var(--accent); color: #11111a; }
     .download { border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); }
-    footer { margin-top: 24px; color: #9d97af; font-size: .9rem; line-height: 1.5; }
+    .installation-note { margin: 24px 0 0; color: #9d97af; font-size: .9rem; line-height: 1.5; }
+    footer { margin-top: auto; padding-top: 30px; color: #9d97af; font-size: .9rem; line-height: 1.5; }
+    .footer-meta { display: flex; flex-wrap: wrap; gap: 5px 14px; align-items: center; font-size: .78rem; }
     .license-link {
       min-height: 0;
-      margin-top: 7px;
       padding: 0;
       color: #aaa4bc;
       font-size: .78rem;
@@ -84,7 +85,7 @@
 <body>
   <main>
     <header>
-      <h1>Two pets for Codex</h1>
+      <h1>Pets for Codex</h1>
       <p>Select “Install” to open ChatGPT Desktop. Both sprite sheets use the Pets v2 format and are installed locally.</p>
     </header>
     <section class="grid" aria-label="Pets">
@@ -107,9 +108,12 @@
         </div>
       </article>
     </section>
+    <p class="installation-note">Installation requires ChatGPT Desktop with Pets support. Each link opens an installation confirmation screen.</p>
     <footer>
-      <div>Installation requires ChatGPT Desktop with Pets support. Each link opens an installation confirmation screen.</div>
-      <a class="license-link" href="licenses.html">Licenses and third-party rights</a>
+      <div class="footer-meta">
+        <span>© 2026 Lera</span>
+        <a class="license-link" href="https://lerazybin.github.io/CodexPets/licenses.html">Licenses and third-party rights</a>
+      </div>
     </footer>
   </main>
   <script>
