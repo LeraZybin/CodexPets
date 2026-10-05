@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#10101a">
-  <title>Lera's Codex Pets</title>
+  <title>Codex Familiars</title>
   <style>
     :root {
       color-scheme: dark;
@@ -21,11 +21,11 @@
         radial-gradient(circle at 90% 4%, #522969 0, transparent 32%),
         #10101a;
     }
-    main { display: flex; flex-direction: column; width: min(960px, calc(100% - 32px)); min-height: 100vh; margin: 0 auto; padding: 64px 0 34px; }
+    main { display: flex; flex-direction: column; width: min(1100px, calc(100% - 32px)); min-height: 100vh; margin: 0 auto; padding: 64px 0 34px; }
     header { max-width: 680px; margin-bottom: 34px; }
     h1 { margin: 0 0 10px; font-size: clamp(2.25rem, 7vw, 4.5rem); line-height: .95; letter-spacing: -.05em; }
     header p { margin: 0; color: #c8c2d9; font-size: 1.05rem; line-height: 1.55; }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
     article {
       position: relative;
       overflow: hidden;
@@ -75,6 +75,9 @@
       text-decoration-color: rgba(255,255,255,.28);
       text-underline-offset: 3px;
     }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
     @media (max-width: 680px) {
       main { padding-top: 42px; }
       .grid { grid-template-columns: 1fr; }
@@ -85,8 +88,8 @@
 <body>
   <main>
     <header>
-      <h1>Pets for Codex</h1>
-      <p>Select “Install” to open ChatGPT Desktop. Both sprite sheets use the Pets v2 format and are installed locally.</p>
+      <h1>Codex Familiars</h1>
+      <p>Select “Install” to open ChatGPT Desktop. All sprite sheets use the Pets v2 format and are installed locally.</p>
     </header>
     <section class="grid" aria-label="Pets">
       <article style="--accent:#ffd465">
@@ -105,6 +108,15 @@
         <div class="actions">
           <a class="install" data-pet="lumen" href="#">Install</a>
           <a class="download" href="assets/lumen-night-catbus-v2.webp" download>Download sprite</a>
+        </div>
+      </article>
+      <article style="--accent:#e29a5c">
+        <img class="portrait" src="assets/bobr-portrait.png" width="192" height="208" alt="Bobr, a grumpy beaver holding a log">
+        <h2>Bobr</h2>
+        <p>A permanently unimpressed beaver who clutches a log and judges every task in silence.</p>
+        <div class="actions">
+          <a class="install" data-pet="bobr" href="#">Install</a>
+          <a class="download" href="assets/bobr-beaver-v2.webp" download>Download sprite</a>
         </div>
       </article>
     </section>
@@ -127,6 +139,11 @@
         name: 'Lumen',
         image: 'assets/lumen-night-catbus-v2.webp',
         description: 'A mysterious night catbus with lantern-bright eyes and warm window light.'
+      },
+      bobr: {
+        name: 'Bobr',
+        image: 'assets/bobr-beaver-v2.webp',
+        description: 'A permanently unimpressed beaver who clutches a log and judges every task in silence.'
       }
     };
     for (const link of document.querySelectorAll('[data-pet]')) {
