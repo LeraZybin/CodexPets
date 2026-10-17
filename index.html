@@ -162,6 +162,18 @@
           </span>
         </div>
       </article>
+      <article style="--accent:#7fc8ff">
+        <img class="portrait" src="assets/pinya-portrait.png" width="192" height="208" alt="Pinya, a blue-eyed colorpoint cat">
+        <h2>Pinya</h2>
+        <p>A gloriously lazy blue-eyed colorpoint cat who helps only when absolutely necessary.</p>
+        <div class="actions">
+          <a class="install" data-pet="pinya" href="#">Install</a>
+          <span class="copy-wrap">
+            <button class="copy-prompt" data-copy-pet="pinya" type="button">Copy prompt</button>
+            <span class="prompt-tooltip" role="tooltip"></span>
+          </span>
+        </div>
+      </article>
     </section>
     <p class="installation-note">Installation requires ChatGPT Desktop with Pets support. “Install” opens the confirmation screen when supported; “Copy prompt” provides a chat-based fallback.</p>
     <footer>
@@ -187,6 +199,11 @@
         name: 'Bobr',
         image: 'assets/bobr-beaver-v2.webp',
         description: 'A permanently unimpressed beaver who clutches a log and judges every task in silence.'
+      },
+      pinya: {
+        name: 'Pinya',
+        image: 'assets/pinya-cat-v2.webp',
+        description: 'A gloriously lazy blue-eyed colorpoint cat who helps only when absolutely necessary.'
       }
     };
     const publicSiteUrl = 'https://lerazybin.github.io/CodexPets/';

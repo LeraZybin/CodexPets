@@ -17,10 +17,8 @@ After deployment, the installation buttons automatically use the site's GitHub P
 This repository uses separate licenses for code and artwork:
 
 - The HTML, CSS, and JavaScript in `index.html` are licensed under the MIT License. See `LICENSE`.
-- `assets/rechka-otter-v2.webp` is licensed under CC BY-NC 4.0. See `ASSETS-LICENSE.md`.
-- `assets/rechka-portrait.png` is licensed under the same CC BY-NC 4.0 terms.
+- Rechka, Bobr, and Pinya sprite sheets and portraits are licensed under CC BY-NC 4.0. See `ASSETS-LICENSE.md`.
 - `assets/lumen-night-catbus-v2.webp` is subject to a limited personal-use permission and a third-party rights notice. It is not covered by the MIT License or CC BY-NC 4.0. See `ASSETS-LICENSE.md`.
 - `assets/lumen-portrait.png` is subject to the same limited personal-use permission and notice.
-- `assets/bobr-beaver-v2.webp` and `assets/bobr-portrait.png` are subject to limited personal-use permission and a third-party rights notice because Bobr was developed from user-provided reference artwork.
 
 Lumen is an unofficial fan-made work inspired by Catbus from *My Neighbor Totoro*. This project is not affiliated with or endorsed by Studio Ghibli or any relevant rights holder.
